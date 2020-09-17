@@ -4,12 +4,12 @@ using System.Text;
 
 namespace SafariPark
 {
-    public abstract class Shape
+    public abstract class Shapes
     {
         public abstract int CalculateArea(); 
     }
 
-    public class Rectangle : Shape
+    public class Rectangle : Shapes
     {
         private int _width;
         private int _height;
