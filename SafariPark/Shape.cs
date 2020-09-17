@@ -16,7 +16,7 @@ namespace SafariPark
 
         public override int CalculateArea()
         {
-            return (_width * _height);
+            return _width * _height;
         }
     }
 
