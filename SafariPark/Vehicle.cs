@@ -62,38 +62,5 @@ namespace SafariPark
         {
             return $"{base.ToString()} capacity: {_capacity} passengers: {_numPassengers} speed: {_speed} position: {Position}";
         }
-
-
-        //protected int GetSpeed()
-        //{
-        //    return _speed;
-        //}
-
-
-        //protected void SetSpeed(int speed)
-        //{
-        //    _speed = speed;
-        //}
-
-        //protected int GetCapacity()
-        //{
-        //    return _capacity;
-        //}
-        //protected void SetCapacity(int capacity)
-        //{
-        //    _capacity = capacity;
-        //}
-
-        //protected int getPosition()
-        //{
-        //    return Position;
-        //}
-
-        //protected void setPosition(int position)
-        //{
-        //    Position = position;
-        //}
-
-
     }
 }
