@@ -1,9 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SafariPark
 {
     class Program
     {
+
+        public static void SaprtaWrite(Object obj)
+        {
+            Console.WriteLine(obj.ToString());
+            if(obj is Hunter)
+            {
+                var hunterObj = (Hunter)obj;
+                Console.WriteLine(hunterObj.Shoot());
+            }
+        }
+
         static void Main(string[] args)
         {
             //Person cathy = new Person("Cathy", "French");
@@ -30,14 +42,42 @@ namespace SafariPark
             //Console.WriteLine($"h ToString: {h.ToString()}");
             //Console.WriteLine($"h:{h}");
 
-            Airplane a = new Airplane(200, 100, "JetsRUs") { NumPassengers = 150 };
-            a.Ascend(500);
-            Console.WriteLine(a.Move(3));
-            Console.WriteLine(a);
-            a.Descend(200);
-            Console.WriteLine(a.Move());
-            a.Move();
-            Console.WriteLine(a);
+            //Airplane a = new Airplane(200, 100, "JetsRUs") { NumPassengers = 150 };
+            //a.Ascend(500);
+            //Console.WriteLine(a.Move(3));
+            //Console.WriteLine(a);
+            //a.Descend(200);
+            //Console.WriteLine(a.Move());
+            //a.Move();
+            //Console.WriteLine(a);
+
+            //List<Object> gameObjects = new List<Object>()
+            //{
+            //    new Person("Cathy","French"),
+            //new Airplane(400, 200, "Booing"),
+            //new Vehicle(12,20),
+            //new Hunter("Henry","Hodgkins","Pentax")
+            //};
+            //foreach(var gameObj in gameObjects)
+            //{
+            //    SaprtaWrite(gameObj);
+            //}
+
+
+            List<IMovable> gameInterfaces = new List<IMovable>()
+            {
+            new Person("Cathy","French"),
+            new Airplane(400, 200, "Booing"),
+            new Vehicle(12,20),
+            new Hunter("Henry","Hodgkins","Pentax")
+            };
+            foreach (var gameInterface in gameInterfaces)
+            {
+                Console.WriteLine(gameInterface.Move());
+                Console.WriteLine(gameInterface.Move(10));
+                //Console.WriteLine(gameInterface);
+            }
+
         }
     }
 }

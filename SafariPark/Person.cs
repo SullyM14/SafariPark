@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SafariPark
 {
-    public class Person
+    public class Person : IMovable
     {
         private string _firstName;
         public string _lastName;
@@ -46,6 +46,17 @@ namespace SafariPark
         public override string ToString()
         {
             return $"{base.ToString()} Name: {GetFullName()} Age: {Age}";
+        }
+
+        public string Move()
+        {
+            return $"Walking along";
+
+        }
+
+        public string Move(int times)
+        {
+            return ($"Walking along {times} times");
         }
     }
 
