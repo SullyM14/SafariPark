@@ -8,7 +8,7 @@ namespace SafariPark
     {
         private int _capacity;
         private int _numPassengers;
-        protected int _speed; 
+        private int _speed; 
 
         public Vehicle()
         {
@@ -44,7 +44,7 @@ namespace SafariPark
             } 
         }
 
-        public int Position { get; protected set; }
+        public int Position { get; private set; }
 
         public virtual string Move()
         {
