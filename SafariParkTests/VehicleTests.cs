@@ -23,9 +23,6 @@ namespace SafariParkTests
             Assert.AreEqual("Moving along", result);
         }
 
-
-
-
         [TestCase(5,5)] //Set Passengers
         [TestCase(-1,0)] //Set Passengers with negative number
         [TestCase(6,5)] //Set Passengers More than Capacity

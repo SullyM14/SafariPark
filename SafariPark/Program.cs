@@ -64,19 +64,49 @@ namespace SafariPark
             //}
 
 
-            List<IMovable> gameInterfaces = new List<IMovable>()
-            {
-            new Person("Cathy","French"),
-            new Airplane(400, 200, "Booing"),
-            new Vehicle(12,20),
-            new Hunter("Henry","Hodgkins","Pentax")
-            };
-            foreach (var gameInterface in gameInterfaces)
-            {
-                Console.WriteLine(gameInterface.Move());
-                Console.WriteLine(gameInterface.Move(10));
-                //Console.WriteLine(gameInterface);
-            }
+            //List<IMovable> gameInterfaces = new List<IMovable>()
+            //{
+            //new Person("Cathy","French"),
+            //new Airplane(400, 200, "Booing"),
+            //new Vehicle(12,20),
+            //new Hunter("Henry","Hodgkins","Pentax")
+            //};
+            //foreach (var gameInterface in gameInterfaces)
+            //{
+            //    Console.WriteLine(gameInterface.Move());
+            //    Console.WriteLine(gameInterface.Move(10));
+            //    //Console.WriteLine(gameInterface);
+            //}
+
+            //List<IShootable> gameWeapons = new List<IShootable>()
+            //{
+            //new LaserGun("Laser Gun"),
+            //new WaterPistol("Water Pistol"),
+            //new Hunter("Henry","Hodgkins",new Camera("Kodak")),
+            //new Camera("Pentax")
+            //};
+            //foreach (var gameWeapon in gameWeapons)
+            //{
+            //    Console.WriteLine(gameWeapon.Shoot());
+            //    //Console.WriteLine(gameInterface);
+            //}
+
+            Camera pentax = new Camera("Pentax");
+            WaterPistol pistol = new WaterPistol("Supersoaker");
+            LaserGun laserGun = new LaserGun("Acme");
+            Hunter nish = new Hunter("Nish", "Mandal", pentax);
+            Hunter sully = new Hunter("Sully", "Miah", pistol);
+            Console.WriteLine(sully.Shoot());
+            Console.WriteLine(nish.Shoot());
+            nish.Shooter = pistol;
+            sully.Shooter = laserGun;
+            Console.WriteLine(nish.Shoot());
+            Console.WriteLine(sully.Shoot());
+            nish.Shooter = laserGun;
+            Console.WriteLine(nish.Shoot());
+            nish.Shooter = pistol;
+            Console.WriteLine(nish.Shoot());
+
 
         }
     }
